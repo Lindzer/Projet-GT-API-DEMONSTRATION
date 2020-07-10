@@ -1,0 +1,16 @@
+language: node_js
+services:
+  - mysql
+
+env:
+  - TRAVIS=true
+
+before_install:
+  - sudo mysql --version
+  - sudo mysql -u root --password="" < test/travis.sql
+
+before_script:
+  - npm install -g gulp-cli
+script:
+  - gulp
+  - npm test

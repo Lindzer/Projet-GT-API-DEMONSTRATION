@@ -1,0 +1,61 @@
+{
+  "name": "projet-gt-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=developpement nodemon src/index.js",
+    "devTest": "cross-env NODE_ENV=developpement jest --forceExit",
+    "devTestWatch": "cross-env NODE_ENV=developpement jest --watchAll --forceExit",
+    "prodReload": "cross-env NODE_ENV=production nodemon src/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "test": "cross-env NODE_ENV=production jest --forceExit",
+    "testWatch": "cross-env NODE_ENV=production jest --watchAll",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AiToShiNoHikari/Projet-GT-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AiToShiNoHikari/Projet-GT-API/issues"
+  },
+  "homepage": "https://github.com/AiToShiNoHikari/Projet-GT-API#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "express-list-endpoints": "^4.0.1",
+    "frisby": "^2.1.2",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^6.0.0",
+    "gulp-json-editor": "^2.5.4",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser-js": "^5.2.2",
+    "gulp-uglify": "^3.0.2",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.0",
+    "uuidv4": "^6.1.1"
+  },
+  "jest": {
+    "verbose": false,
+    "testMatch": [
+      "**/__tests__/**/*.spec.js",
+      "**/*.spec.js"
+    ],
+    "globalSetup": "<rootDir>/globalSetup.test.js",
+    "setupFiles": [
+      "<rootDir>/setup.test.js"
+    ]
+  }
+}
